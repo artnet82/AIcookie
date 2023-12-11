@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Results</title>
+</head>
+<body>
+    <h1>Model Results</h1>
+    
+    {% if model_available %}
+        <h2>Accuracy: {{ accuracy }}</h2>
+        <h2>Confusion Matrix:</h2>
+        <img src="data:image/png;base64,{{ plot_data }}" alt="Confusion Matrix">
+        
+        <h2>Download Model:</h2>
+        <a href="/download-model" download>Download Model</a>
+    {% else %}
+        <h2>No model available. Please upload a CSV file.</h2>
+    {% endif %}
+</body>
+</html>
